@@ -1,0 +1,99 @@
+@mixin d-flex() {
+    display: flex;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-moz-box;
+    display:-ms-flexbox;
+}
+@mixin align-item($value) {
+    -webkit-box-align: $value;
+    -webkit-align-items: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+    align-items:$value;
+    
+}
+
+@mixin justify-content($value) {
+    -webkit-box-pack: $value;
+    -webkit-justify-content: $value;
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+    justify-content: $value;
+    
+}
+@mixin bd-radius($value) {
+    -webkit-border-radius:$value;
+    -moz-border-radius:$value;
+    border-radius:$value;
+
+}
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+    transform: $value;
+    
+}
+@mixin transition($value){
+    -webkit-transition:$value;
+    -o-transition:$value;
+    -moz-transition:$value; 
+    transition:$value;
+}
+
+@mixin mobile {
+    @media screen and (max-width:767px) {
+        @content;
+    }
+    
+}
+@mixin tablate {
+    @media screen and (max-width:1023px) {
+        @content;
+    }
+    
+}
+@mixin display-s {
+    @media screen and (max-width:1279px) {
+        @content;
+    }
+    
+}
+@mixin laptop {
+    @media screen and (max-width:1599px) {
+        @content;
+    }
+}
+@mixin i-pad {
+    @media screen and (max-width:1199px) {
+        @content;
+    }   
+}
+@mixin iphone-4 {
+    @media screen and (max-width: 567px) {
+        @content;
+    }
+    
+}
+@mixin iphone-6 {
+    @media screen and (max-width: 413px) {
+        @content;
+    }
+    
+}
+
+@mixin list-loop($className, $styleName) {
+    $i: 5;
+    @while $i <= $max {
+      #{$className + $i} { 
+        #{$styleName}: #{$i + $unit};
+      }
+      $i: $i + $offset;
+    }
+  }
+  @include list-loop('.mt-', 'margin-top');
+
+  
+  
